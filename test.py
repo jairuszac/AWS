@@ -1,13 +1,13 @@
 import os, json, boto3
 
 # Set the global variables
-globalVars  = {}
-globalVars['Owner']                 = "Miztiik"
-globalVars['Environment']           = "Test"
-globalVars['REGION_NAME']           = "ap-south-1"
-globalVars['tagName']               = "Valaxy-Serverless-Security-Group-Sentry"
+# globalVars  = {}
+# globalVars['Owner']                 = "Miztiik"
+# globalVars['Environment']           = "Test"
+# globalVars['REGION_NAME']           = "ap-south-1"
+# globalVars['tagName']               = "Valaxy-Serverless-Security-Group-Sentry"
 
-globalVars['security_group_id']     = os.environ['security_group_id']
+# globalVars['security_group_id']     = os.environ['security_group_id']
 
 # ===============================================================================
 def lambda_handler(event, context):
