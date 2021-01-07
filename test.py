@@ -38,6 +38,8 @@ def revoke_security_group_ingress(event_detail):
     # Build the normalized IP permission JSON struture.
     ip_permissions = normalize_paramter_names(request_parameters['ipPermissions']['items'])
 
+    print('ip permissions', ip_permissions)
+
     response = boto3.client('ec2').revoke_security_group_ingress(
         GroupId=request_parameters['groupId'],
         IpPermissions=ip_permissions
@@ -78,7 +80,7 @@ def normalize_paramter_names(ip_items):
         ipv_address_value = 'cidrIp'
         ipv_range_list_name_capitalized = 'IpRanges'
         ipv_address_value_capitalized = 'CidrIp'
-        
+
         ip_ranges = []
 
         # Next, build the IP permission list.
@@ -91,5 +93,5 @@ def normalize_paramter_names(ip_items):
 
         new_ip_items.append(new_ip_item)
 
-    print(new_ip_items)
+    print('start', new_ip_items, 'end')
     return new_ip_items
