@@ -67,17 +67,17 @@ def normalize_paramter_names(ip_items):
         }
 
         # CidrIp or CidrIpv6 (IPv4 or IPv6)?
-        # if 'ipv6Ranges' in ip_item and ip_item['ipv6Ranges']:
-        #     # This is an IPv6 permission range, so change the key names.
-        #     ipv_range_list_name = 'ipv6Ranges'
-        #     ipv_address_value = 'cidrIpv6'
-        #     ipv_range_list_name_capitalized = 'Ipv6Ranges'
-        #     ipv_address_value_capitalized = 'CidrIpv6'
+        if 'ipRanges' in ip_item and ip_item['ipRanges']:
+            # This is an IPv6 permission range, so change the key names.
+            # ipv_range_list_name = 'ipv6Ranges'
+            # ipv_address_value = 'cidrIpv6'
+            # ipv_range_list_name_capitalized = 'Ipv6Ranges'
+            # ipv_address_value_capitalized = 'CidrIpv6'
         # else:
-        ipv_range_list_name = 'ipRanges'
-        ipv_address_value = 'cidrIp'
-        ipv_range_list_name_capitalized = 'IpRanges'
-        ipv_address_value_capitalized = 'CidrIp'
+            ipv_range_list_name = 'ipRanges'
+            ipv_address_value = 'cidrIp'
+            ipv_range_list_name_capitalized = 'IpRanges'
+            ipv_address_value_capitalized = 'CidrIp'
 
         ip_ranges = []
 
@@ -91,4 +91,5 @@ def normalize_paramter_names(ip_items):
 
         new_ip_items.append(new_ip_item)
 
+    print(new_ip_items)
     return new_ip_items
